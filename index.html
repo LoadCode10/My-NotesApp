@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="app-title">Nooty Notes</h1>
+  <p class="slogan">“Modern notes for modern minds.”</p>
+
+
+  <div class="container-app">
+    <div class="app-header">
+      <input id="searchInput" class="search-input" type="text" placeholder="Search notes">
+      <div class="filter-notes">
+        <select id="selectNotes" class="select-notes">
+          <option value="all">All notes</option>
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+          <option value="idea">Idea</option>
+          <option value="reminder">Reminder</option>
+        </select>
+        <button id="addNoteBtn" class="add-btn">
+          <i class="fa-solid fa-plus"></i> Add
+        </button>
+      </div>
+    </div>
+    <div class="notes-container">
+      <div class="note-card personal">
+        <button class="delete-note-btn">
+          <i class="fa-solid fa-trash delete-note"></i>
+        </button>
+        <div class="note-card-title">Personal Title</div>
+        <div class="note-content">This is a personal note content</div>
+        <div class="card-infos">
+          <div class="card-type personal-card">
+            <i class="fa-solid fa-user"></i> Personal
+          </div>
+          <div class="card-date">29.04.2025 17:14</div>
+        </div>
+      </div>
+      <div class="note-card reminder">
+        <button class="delete-note-btn">
+          <i class="fa-solid fa-trash delete-note"></i>
+        </button>
+        <div class="note-card-title">Reminder Title</div>
+        <div class="note-content">This is a reminder note content</div>
+        <div class="card-infos">
+          <div class="card-type reminder-card">
+            <i class="fa-solid fa-bell"></i> Reminder
+          </div>
+          <div class="card-date">29.04.2025 17:14</div>
+        </div>
+      </div>
+      <div class="note-card idea">
+        <button class="delete-note-btn">
+          <i class="fa-solid fa-trash delete-note"></i>
+        </button>
+        <div class="note-card-title">idea Title</div>
+        <div class="note-content">This is an idea note content</div>
+        <div class="card-infos">
+          <div class="card-type idea-card">
+            <i class="fa-solid fa-lightbulb"></i> Idea
+          </div>
+          <div class="card-date">29.04.2025 17:14</div>
+        </div>
+      </div>
+      <div class="note-card work">
+        <button class="delete-note-btn">
+          <i class="fa-solid fa-trash delete-note"></i>
+        </button>
+        <div class="note-card-title">work Title</div>
+        <div class="note-content">This is a work note content</div>
+        <div class="card-infos">
+          <div class="card-type work-card">
+            <i class="fa-solid fa-briefcase"></i> Work
+          </div>
+          <div class="card-date">29.04.2025 17:14</div>
+        </div>
+      </div>
+      <div class="note-card reminder">
+        <button class="delete-note-btn">
+          <i class="fa-solid fa-trash delete-note"></i>
+        </button>
+        <div class="note-card-title">Weekend Plans</div>
+        <div class="note-content">Go hikin on Saturday and meet friends for brunch on sunday.</div>
+        <div class="card-infos">
+          <div class="card-type reminder-card">
+            <i class="fa-solid fa-bell"></i> Reminder
+          </div>
+          <div class="card-date">29.04.2025 17:14</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay">
+    <form class="modal" id="form-add-note">
+      <div class="modal-header">
+        <div class="modal-title">New Note</div>
+        <button class="delete-modal">X</button>
+      </div>
+      <div class="add-note-form form-group">
+        <label for="noteTitle" class="note-title">Title</label>
+        <input type="text" id="noteTitle" required>
+        <label for="noteContent" class="note-content">Content</label>
+        <textarea id="noteContent" required></textarea>
+      </div>
+      <div class="notes-tags">
+        <div class="tags-title-div">Tags</div>
+        <div class="all-tags">
+          <label class="work-note">
+            <input type="radio" name="noteType" value="Work">
+            <span class="note-type "><i class="fa-solid fa-user"></i> Work</span>
+          </label>
+          <label class="personal-note">
+            <input type="radio" name="noteType" value="Personal">
+            <span class="note-type "><i class="fa-solid fa-user"></i> Personal</span>
+          </label>
+          <label class="idea-note">
+            <input type="radio" name="noteType" value="Idea">
+            <span class="note-type"><i class="fa-solid fa-user"></i> Idea</span>
+          </label>
+          <label class="reminder-note">
+            <input type="radio" name="noteType" value="Reminder">
+            <span class="note-type"><i class="fa-solid fa-user"></i> Reminder</span>
+          </label>
+        </div> 
+      </div>
+      <button type="submit" class="saveNote-btn">Save Note</button>
+    </form>
+  </div>
+
+  <div class="modal-overlay-delete">
+    <div class="modal-delete-msg">
+      <div class="delete-msg">“Do you really want to delete this note?”</div>
+      <div class="buttons-choice">
+        <button id="cancelBtn" class="cancel">Cancel if Not Sure</button>
+        <button id="confirmBtn" class="confirm">Confirm if you Sure</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
