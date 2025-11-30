@@ -69,3 +69,71 @@ Each note is stored as:
   "date": "2025-01-01 14:22",
   "id": "a12b-..."
 }
+
+---
+
+🧩 How it Works
+➤ Adding a Note
+
+User opens the modal
+
+Fills the form
+
+Submits → note object created via MyNote class
+
+Note saved to localStorage
+
+UI re-renders and displays the new note
+
+➤ Displaying Notes
+
+Notes loaded from localStorage when DOMContentLoaded fires
+
+Each note becomes a styled card inside .notes-container
+
+➤ Filtering Notes
+
+Selecting a category hides all cards that don’t match the chosen type
+
+➤ Searching Notes
+
+keyup event runs on the search bar
+
+Loops through each .note-card
+
+Matches text & updates visibility in real-time
+
+➤ Deleting Notes
+
+Clicking delete opens a confirmation modal
+
+On confirm:
+
+The note is removed from localStorage
+
+The note DOM element is removed from the page
+
+💾 LocalStorage Functions
+saveNotesToLocal()
+
+Stores the notes array inside localStorage.
+
+getNotesInLocal()
+
+Returns all saved notes or an empty array if none exist.
+
+deleteNoteInLocal(id)
+
+Removes the note whose ID matches the provided parameter.
+
+🛠️ Technologies Used
+
+HTML
+
+CSS
+
+Vanilla JavaScript
+
+localStorage API
+
+Font Awesome Icons
